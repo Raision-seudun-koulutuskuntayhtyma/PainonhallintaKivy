@@ -3,7 +3,8 @@
 application. This version uses a separate kv file to assign properties
 for the graphical user interface. These properties are defined in the
 kvweight.kv file. While the name of main application class is KvweightApp
-the kv file must have the sama name, but without word App. 
+the kv file must have the sama name but without word App. That's the reason 
+why linters suggest to use CamelCase class names in Kivy Projects,
 kv file names shoud allways be written in lower case. 
 """
 
