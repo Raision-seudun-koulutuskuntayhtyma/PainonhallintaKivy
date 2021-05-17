@@ -14,7 +14,7 @@ kivy.require('2.0.0') # Edellytetään vähintään 2.0 versiota
 
 # Komponettien alustukset (Kivyn luokkien käyttöönotto)
 from kivy.app import App # Varsinaisen sovelluksen ikkuna
-from kivy.uix.gridlayout import GridLayout #Asetteluruudukko
+from kivy.uix.gridlayout import GridLayout # Asetteluruudukko
 
  
 # Sovelluksen alustukset ja luokkien määrittelyt
