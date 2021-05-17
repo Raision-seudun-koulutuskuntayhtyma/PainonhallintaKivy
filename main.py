@@ -3,9 +3,9 @@
 # Kirjastojen lataukset
 import kivy
 
-# Komponettien alustukset
-from kivy.app import App
-from kivy.core import text # Varsinaisen sovelluksen ikkuna
+# Komponettien alustukset (Kivyn luokkien käyttöönotto)
+from kivy.app import App # Varsinaisen sovelluksen ikkuna
+from kivy.core import text 
 from kivy.uix.gridlayout import GridLayout #Asetteluruudukko
 from kivy.uix.button import Button # Painike
 from kivy.uix.textinput import TextInput # Tekstikenttä
