@@ -1,0 +1,74 @@
+#:kivy 2.0
+# 
+# Määritellään otsakkeille oma tyyli
+<Big_Label@Label>:
+    font_size: 24
+    color: 'fcba03'
+
+# TODO: Tekstikentille vastaava tyyli, fonttikoko 32 pt, yksirivinen
+
+# TODO: Painikkeille myöskin oma tyyli
+
+
+# Ruudukon asetukset (Glayout-luokka)
+<Glayout>:
+    id: bmi_calculator
+
+    # Määritellään luokan ominnaisuudet poimimalla komponenttien tunnisteita
+    first_name_input_text: first_name
+    last_name_input_text: last_name
+    weight_text: weight_input
+    height_text: height_input
+    bmi_text: bmi
+
+    # Luodaan 2 sarakkeen ruudukko
+    cols: 2
+
+    # Komponenttien määritykset
+    Big_Label:
+        id: first_name_label
+        text: 'Etunimi'
+
+    TextInput:
+        id: first_name
+        padding: [20, 20, 20, 20]
+        font_size: 24
+        multiline: False
+        hint_text: 'Syötä etunimesi'
+
+    Big_Label:
+        id: last_name_label
+        text: 'Sukunimi'
+
+    TextInput:
+        id: last_name
+
+    Big_Label:
+        id: weight_label
+        text: 'Paino (kg)'
+
+    TextInput:
+        id: weight_input
+    
+    Big_Label:
+        id: height_label
+        text: 'Pituus (cm)'
+
+    TextInput:
+        id: height_input
+
+    Button:
+        id: bmi_button
+        text: 'Laske BMI'
+
+        # Kutsutaan luokan calculate_bmi()-metodia painiketta painamalla
+        # Huomaa, että viittauksessa tarvitaan luokan Glayout id bmi_calculator
+        on_press: bmi_calculator.calculate_bmi()
+        
+    TextInput:
+        id: bmi
+        disabled: True
+        disabled_foreground_color: 'fcba03'
+        background_color: [0, 0, 0, 0]
+
+    # TODO: Painike rasvaprosentin laskemista varten ja sille tuloskenttä
