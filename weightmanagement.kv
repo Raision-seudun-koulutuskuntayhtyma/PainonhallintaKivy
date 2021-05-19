@@ -1,0 +1,36 @@
+#:kivy 2.0
+
+# Global UI element definitons
+
+<Big_Label@Label>:
+    font_size: 32
+    color: 'edd926'
+
+<Big_TextInput@TextInput>:
+    font_size: 32
+    multiline: False
+
+<Big_Button@Button>:
+    font_size: 24
+    
+# Glayout class definition
+<Glayout>:
+    id: weight_calculator
+
+    # Properties
+    height_value:
+    weight_value:
+    age_value:
+    sex_value:
+
+    # Number of columns
+    cols: 2
+
+    # UI elements
+    Big_Label:
+        id: height_label
+        text: 'Pituus (cm)'
+
+    Big_TextInput:
+        id: height_text
+
