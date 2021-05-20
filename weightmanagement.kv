@@ -18,10 +18,11 @@
     id: weight_calculator
 
     # Properties
-    height_value:
-    weight_value:
-    age_value:
-    sex_value:
+    height_value: height_text
+    weight_value: weigh_text
+    age_value: age_text
+    sex_value: sex_text
+    bmi_value: bmi_text
 
     # Number of columns
     cols: 2
@@ -34,3 +35,35 @@
     Big_TextInput:
         id: height_text
 
+    Big_Label:
+        id: weight_label
+        text: 'Paino (kg)'
+
+    Big_TextInput:
+        id: weigh_text
+
+    Big_Label:
+        id: age_label
+        text: 'Ikä'
+
+    Big_TextInput:
+        id: age_text
+
+    Big_Label:
+        id: sex_label
+        text: 'Sukupuoli'
+
+    Big_TextInput:
+        id: sex_text
+        hint_text: 'Mies 1, nainen 0'
+
+    Big_Button:
+        id: bmi_button
+        text: 'Laske BMI'
+        on_press: root.calculate_bmi()
+
+    Big_TextInput:
+        id: bmi_text
+        disabled: True
+        disabled_foreground_color: 'edd926'
+        background_color: '000000'
