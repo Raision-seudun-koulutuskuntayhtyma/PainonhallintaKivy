@@ -1,6 +1,7 @@
 # WEIGHT MANAGEMENT APPLICATION MAIN BOX LAYOUT
 
 # Libraries and modules
+import calculations
 import kivy # The Kivy framework
 kivy.require('2.0.0') # Minimum version of the framework
 from kivy.app import App # A parent class for the main window
@@ -18,12 +19,13 @@ class BLayout(BoxLayout):
         person_bmi = round(person_weight / person_height ** 2)
         self.bmi_value.text = str(person_bmi)
 
-    def calulate_fat(self): # Calculates the Fat percentage
-        person_height = float(self.height_value.text)
-        person_weight = float(self.weight_value.text)
+    def calculate_fat(self): # Calculates the Fat percentage
         person_age = float(self.age_value.text)
         person_sex = float(self.sex_value.text)
-        # TODO: person_fat_percentage
+        person_bmi = float(self.bmi_value.text)
+        person_fat = round(calculations.fat_percentage(person_bmi, person_age, person_sex))
+        self.fat_value.text = str(person_fat)
+
 # Create the app
 class FatManagementApp(App):
     def build(self):

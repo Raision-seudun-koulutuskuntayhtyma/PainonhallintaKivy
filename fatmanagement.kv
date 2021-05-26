@@ -13,6 +13,7 @@
     # Vertical centering: half of the field height minus half oh the line height
     # This produces correct padding for single line text input
     padding_y: self.height / 2.0 - (self.line_height / 2.0)
+    write_tab: False
 
 <Big_Button@Button>:
     font_size: 24
@@ -27,6 +28,9 @@
     age_value: age_text
     sex_value: sex_text
     bmi_value: bmi_text
+    fat_value: fat_text
+    bmi_btn: bmi_button
+    fat_btn: fat_button
 
     # Orientation
     orientation: 'vertical'
@@ -35,22 +39,24 @@
     Big_Label:
         id: height_label
         text: 'Rasvalaskuri'
-
+    Label:
+        id: mandatory_text
+        text: '* are mandatory'
     Big_TextInput:
         id: height_text
-        hint_text: 'pituus (cm)'
+        hint_text: '* pituus (cm)'
 
     Big_TextInput:
         id: weigh_text
-        hint_text: 'paino (kg)'
+        hint_text: '* paino (kg)'
 
     Big_TextInput:
         id: age_text
-        hint_text: 'ikä'
+        hint_text: '* ikä'
 
     Big_TextInput:
         id: sex_text
-        hint_text: 'Mies 1, nainen 0'
+        hint_text: '* Mies 1, nainen 0'
 
     Big_Button:
         id: bmi_button
@@ -60,6 +66,18 @@
 
     Big_TextInput:
         id: bmi_text
+        disabled: True
+        disabled_foreground_color: 'edd926'
+        background_color: '000000'
+
+    Big_Button:
+        id: fat_button
+        text: 'Laske rasvaprosentti'
+        on_press: root.calculate_fat()
+        # Alternative way on_press: weight_calculator.calculate_fat() 
+
+    Big_TextInput:
+        id: fat_text
         disabled: True
         disabled_foreground_color: 'edd926'
         background_color: '000000'
