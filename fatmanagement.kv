@@ -9,6 +9,10 @@
 <Big_TextInput@TextInput>:
     font_size: 32
     multiline: False
+    halign: 'center' # horizontal alignment
+    # Vertical centering: half of the field height minus half oh the line height
+    # This produces correct padding for single line text input
+    padding_y: self.height / 2.0 - (self.line_height / 2.0)
 
 <Big_Button@Button>:
     font_size: 24
