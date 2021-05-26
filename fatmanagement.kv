@@ -13,8 +13,8 @@
 <Big_Button@Button>:
     font_size: 24
     
-# Glayout class definition
-<Glayout>:
+# BLayout class definition
+<BLayout>:
     id: weight_calculator
 
     # Properties
@@ -24,34 +24,25 @@
     sex_value: sex_text
     bmi_value: bmi_text
 
-    # Number of columns
-    cols: 2
+    # Orientation
+    orientation: 'vertical'
 
     # UI elements
     Big_Label:
         id: height_label
-        text: 'Pituus (cm)'
+        text: 'Rasvalaskuri'
 
     Big_TextInput:
         id: height_text
-
-    Big_Label:
-        id: weight_label
-        text: 'Paino (kg)'
+        hint_text: 'pituus (cm)'
 
     Big_TextInput:
         id: weigh_text
-
-    Big_Label:
-        id: age_label
-        text: 'Ikä'
+        hint_text: 'paino (kg)'
 
     Big_TextInput:
         id: age_text
-
-    Big_Label:
-        id: sex_label
-        text: 'Sukupuoli'
+        hint_text: 'ikä'
 
     Big_TextInput:
         id: sex_text
