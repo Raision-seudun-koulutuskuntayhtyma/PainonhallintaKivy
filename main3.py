@@ -6,8 +6,10 @@ import kivy # The Kivy framework
 kivy.require('2.0.0') # Minimum version of the framework
 from kivy.app import App # A parent class for the main window
 from kivy.uix.boxlayout import BoxLayout # A parent class for the layout
+import database # Module containing database functions
 
 # Initializations and class definitions
+database_name = 'weightmanagement.db'
 
 # The layout
 class BLayout(BoxLayout):
@@ -25,6 +27,14 @@ class BLayout(BoxLayout):
         person_bmi = float(self.bmi_value.text)
         person_fat = round(calculations.fat_percentage(person_bmi, person_age, person_sex))
         self.fat_value.text = str(person_fat)
+
+    def store_measurements(self): # Stores the measuring data to the database
+        person_height = float(self.height_value.text) / 100
+        person_weight = float(self.weight_value.text) 
+        person_age = float(self.age_value.text)
+        person_sex = float(self.sex_value.text)
+        database.add_measure(database_name, person_height, person_weight, person_sex, person_age)
+
 
 # Create the app
 class FatManagementApp(App):

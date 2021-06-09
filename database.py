@@ -69,7 +69,8 @@ def add_measure(file, p_height, p_weight, sex, age):
 # Paikallinen testaus
 if __name__ == "__main__":
 
-    create_db(database_name)
-
+    # create_db(database_name)
     create_table(database_name)
+
+    
    
